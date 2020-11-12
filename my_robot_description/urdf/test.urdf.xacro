@@ -1,16 +1,8 @@
 <?xml version="1.0" ?>
 <robot name="myrobot" xmlns:xacro="http://www.ros.org/wiki/xacro"> 
     <xacro:include filename="$(find my_robot_description)/urdf/materials.xacro" />
-    <xacro:include filename="$(find my_robot_description)/urdf/myrobot2.gazebo" />
+    <xacro:include filename="$(find my_robot_description)/urdf/test.gazebo" />
     <xacro:include filename="$(find my_robot_description)/urdf/macros2.xacro" />
-    
-    <link name="base_footprint"/>
-    
-    <joint name="base_joint" type="fixed">
-      <parent link="base_footprint"/>
-      <child link="base_link"/>
-      <origin xyz="0.0 0.0 0.010" rpy="0 0 0"/>
-    </joint>
 
     <link name="base_link">
         <!-- pose and inertial -->
@@ -35,7 +27,7 @@
         </visual>
     </link>
 
-    <link name="base_scan">
+    <link name="sensor_laser">
         <inertial>
             <origin xyz="0 0 0" rpy="0 0 0" />
             <mass value="1" />
@@ -58,10 +50,10 @@
         </collision>
     </link>
 
-    <joint name="scan_joint" type="fixed">
+    <joint name="joint_sensor_laser" type="fixed">
         <origin xyz="-0.045 0 0.08" rpy="0 0 0"/>
         <parent link="base_link"/>
-        <child link="base_scan"/>
+        <child link="sensor_laser"/>
     </joint>
 
     <xacro:link_wheel name="blink_right_wheel" />

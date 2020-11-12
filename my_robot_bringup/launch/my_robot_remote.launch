@@ -1,0 +1,6 @@
+<launch>
+	<param name="robot_description" command="$(find xacro)/xacro --inorder '$(find my_robot_description)/urdf/my_robot2.urdf.xacro'"/>
+	<node name="robot_state_publisher" type="robot_state_publisher" pkg="robot_state_publisher">
+		<param name="public_frequency" type="double" value="50.0"/>
+	</node>
+</launch>

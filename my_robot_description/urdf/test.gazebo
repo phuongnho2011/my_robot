@@ -31,75 +31,57 @@
 
     <gazebo>
         <plugin filename="libgazebo_ros_diff_drive.so" name="differential_drive_controller">
+        <legacyMode>false</legacyMode>
         <alwaysOn>true</alwaysOn>
+        <updateRate>20</updateRate>
         <leftJoint>fjoint_left_wheel</leftJoint>
         <rightJoint>fjoint_right_wheel</rightJoint>
         <wheelSeparation>0.35</wheelSeparation>
         <wheelDiameter>0.1</wheelDiameter>
-        <wheelTorque>0.1</wheelTorque>
+        <torque>0.1</torque>
         <commandTopic>cmd_vel</commandTopic>
         <odometryTopic>odom</odometryTopic>
         <odometryFrame>odom</odometryFrame>
-        <odometrySource>world</odometrySource>
-        <publishOdomTF>true</publishOdomTF>
-        <robotBaseFrame>base_footprint</robotBaseFrame>
-        <publishWheelTF>false</publishWheelTF>
-        <publishTf>true</publishTf>
-        <publishWheelJointState>true</publishWheelJointState>
-        <legacyMode>false</legacyMode>
-        <updateRate>20</updateRate>
-        <rosDebugLevel>na</rosDebugLevel>
+        <robotBaseFrame>base_link</robotBaseFrame>
         </plugin>
     </gazebo> 
 
     <gazebo>
         <plugin filename="libgazebo_ros_diff_drive.so" name="differential_drive_controller">
+        <legacyMode>false</legacyMode>
         <alwaysOn>true</alwaysOn>
+        <updateRate>20</updateRate>
         <leftJoint>bjoint_left_wheel</leftJoint>
         <rightJoint>bjoint_right_wheel</rightJoint>
         <wheelSeparation>0.35</wheelSeparation>
         <wheelDiameter>0.1</wheelDiameter>
-        <wheelTorque>0.1</wheelTorque>
+        <torque>0.1</torque>
         <commandTopic>cmd_vel</commandTopic>
         <odometryTopic>odom</odometryTopic>
         <odometryFrame>odom</odometryFrame>
-        <odometrySource>world</odometrySource>
-        <publishOdomTF>true</publishOdomTF>
-        <robotBaseFrame>base_footprint</robotBaseFrame>
-        <publishWheelTF>false</publishWheelTF>
-        <publishTf>true</publishTf>
-        <publishWheelJointState>true</publishWheelJointState>
-        <legacyMode>false</legacyMode>
-        <updateRate>20</updateRate>
-        <rosDebugLevel>na</rosDebugLevel>
+        <robotBaseFrame>base_link</robotBaseFrame>
         </plugin>
     </gazebo> 
 
     <gazebo>
         <plugin filename="libgazebo_ros_diff_drive.so" name="differential_drive_controller">
+        <legacyMode>false</legacyMode>
         <alwaysOn>true</alwaysOn>
+        <updateRate>20</updateRate>
         <leftJoint>mjoint_left_wheel</leftJoint>
         <rightJoint>mjoint_right_wheel</rightJoint>
         <wheelSeparation>0.35</wheelSeparation>
         <wheelDiameter>0.1</wheelDiameter>
-        <wheelTorque>0.1</wheelTorque>
+        <torque>0.1</torque>
         <commandTopic>cmd_vel</commandTopic>
         <odometryTopic>odom</odometryTopic>
         <odometryFrame>odom</odometryFrame>
-        <odometrySource>world</odometrySource>
-        <publishOdomTF>true</publishOdomTF>
-        <robotBaseFrame>base_footprint</robotBaseFrame>
-        <publishWheelTF>false</publishWheelTF>
-        <publishTf>true</publishTf>
-        <publishWheelJointState>true</publishWheelJointState>
-        <legacyMode>false</legacyMode>
-        <updateRate>20</updateRate>
-        <rosDebugLevel>na</rosDebugLevel>
+        <robotBaseFrame>base_link</robotBaseFrame>
         </plugin>
     </gazebo> 
 
      <!-- hokuyo -->
-    <gazebo reference="base_scan">
+    <gazebo reference="sensor_laser">
         <sensor type="ray" name="head_rplidar_sensor">
             <pose>0 0 0 0 0 0</pose>
             <visualize>false</visualize>
@@ -130,7 +112,7 @@
             </ray>
             <plugin name="gazebo_ros_head_rplidar_controller" filename="libgazebo_ros_laser.so">
                 <topicName>/scan</topicName>
-                <frameName>base_scan</frameName>
+                <frameName>sensor_laser</frameName>
             </plugin>
         </sensor>
     </gazebo>
