@@ -1,11 +1,10 @@
 {
     "python.autoComplete.extraPaths": [
+        "/home/phuong/my_lidar_robot/devel/lib/python2.7/dist-packages",
         "/home/phuong/kinetic_catkin_ws/devel/lib/python2.7/dist-packages",
         "/home/phuong/ros_kinetic_catkin_ws/devel_isolated/xacro/lib/python2.7/dist-packages",
         "/home/phuong/ros_kinetic_catkin_ws/install_isolated/lib/python2.7/dist-packages",
         "/home/phuong/ros_kinetic_catkin_ws/devel_isolated/python_orocos_kdl/lib/python2.7/dist-packages",
         "/home/phuong/ros_kinetic_catkin_ws/devel_isolated/opencv3/lib/python2.7/dist-packages"
-    ],
-    "ros.distro": "melodic",
-    "python.pythonPath": "/usr/bin/python"
+    ]
 }
