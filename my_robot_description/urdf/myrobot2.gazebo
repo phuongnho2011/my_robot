@@ -5,35 +5,43 @@
     <material>Gazebo/Orange</material>
     </gazebo>
 
-    <gazebo reference="blink_left_wheel">
-        <material>Gazebo/Blue</material>
+    <gazebo reference="wheel_left_link">
+        <mu1>0.1</mu1>
+        <mu2>0.1</mu2>
+        <kp>500000.0</kp>
+        <kd>10.0</kd>
+        <minDepth>0.001</minDepth>
+        <maxVel>0.1</maxVel>
+        <fdir1>1 0 0</fdir1>
+        <material>Gazebo/FlatBlack</material>
     </gazebo>
 
-    <gazebo reference="blink_right_wheel">
-        <material>Gazebo/Blue</material>
+    <gazebo reference="wheel_right_link">
+        <mu1>0.1</mu1>
+        <mu2>0.1</mu2>
+        <kp>500000.0</kp>
+        <kd>10.0</kd>
+        <minDepth>0.001</minDepth>
+        <maxVel>0.1</maxVel>
+        <fdir1>1 0 0</fdir1>
+        <material>Gazebo/FlatBlack</material>
     </gazebo>
 
-    <gazebo reference="mlink_left_wheel">
-        <material>Gazebo/Blue</material>
-    </gazebo>
-
-    <gazebo reference="mlink_right_wheel">
-        <material>Gazebo/Blue</material>
-    </gazebo>
-
-    <gazebo reference="flink_left_wheel">
-        <material>Gazebo/Blue</material>
-    </gazebo>
-
-    <gazebo reference="flink_right_wheel">
-        <material>Gazebo/Blue</material>
+    <gazebo reference="caster_back_link">
+        <mu1>0.1</mu1>
+        <mu2>0.1</mu2>
+        <kp>1000000.0</kp>
+        <kd>100.0</kd>
+        <minDepth>0.001</minDepth>
+        <maxVel>1.0</maxVel>
+        <material>Gazebo/FlatBlack</material>
     </gazebo>
 
     <gazebo>
         <plugin filename="libgazebo_ros_diff_drive.so" name="differential_drive_controller">
         <alwaysOn>true</alwaysOn>
-        <leftJoint>fjoint_left_wheel</leftJoint>
-        <rightJoint>fjoint_right_wheel</rightJoint>
+        <leftJoint>wheel_left_joint</leftJoint>
+        <rightJoint>wheel_right_joint</rightJoint>
         <wheelSeparation>0.35</wheelSeparation>
         <wheelDiameter>0.1</wheelDiameter>
         <wheelTorque>0.1</wheelTorque>
@@ -47,56 +55,11 @@
         <publishTf>true</publishTf>
         <publishWheelJointState>true</publishWheelJointState>
         <legacyMode>false</legacyMode>
-        <updateRate>20</updateRate>
+        <updateRate>5</updateRate>
         <rosDebugLevel>na</rosDebugLevel>
         </plugin>
     </gazebo> 
 
-    <gazebo>
-        <plugin filename="libgazebo_ros_diff_drive.so" name="differential_drive_controller">
-        <alwaysOn>true</alwaysOn>
-        <leftJoint>bjoint_left_wheel</leftJoint>
-        <rightJoint>bjoint_right_wheel</rightJoint>
-        <wheelSeparation>0.35</wheelSeparation>
-        <wheelDiameter>0.1</wheelDiameter>
-        <wheelTorque>0.1</wheelTorque>
-        <commandTopic>cmd_vel</commandTopic>
-        <odometryTopic>odom</odometryTopic>
-        <odometryFrame>odom</odometryFrame>
-        <odometrySource>world</odometrySource>
-        <publishOdomTF>true</publishOdomTF>
-        <robotBaseFrame>base_footprint</robotBaseFrame>
-        <publishWheelTF>false</publishWheelTF>
-        <publishTf>true</publishTf>
-        <publishWheelJointState>true</publishWheelJointState>
-        <legacyMode>false</legacyMode>
-        <updateRate>20</updateRate>
-        <rosDebugLevel>na</rosDebugLevel>
-        </plugin>
-    </gazebo> 
-
-    <gazebo>
-        <plugin filename="libgazebo_ros_diff_drive.so" name="differential_drive_controller">
-        <alwaysOn>true</alwaysOn>
-        <leftJoint>mjoint_left_wheel</leftJoint>
-        <rightJoint>mjoint_right_wheel</rightJoint>
-        <wheelSeparation>0.35</wheelSeparation>
-        <wheelDiameter>0.1</wheelDiameter>
-        <wheelTorque>0.1</wheelTorque>
-        <commandTopic>cmd_vel</commandTopic>
-        <odometryTopic>odom</odometryTopic>
-        <odometryFrame>odom</odometryFrame>
-        <odometrySource>world</odometrySource>
-        <publishOdomTF>true</publishOdomTF>
-        <robotBaseFrame>base_footprint</robotBaseFrame>
-        <publishWheelTF>false</publishWheelTF>
-        <publishTf>true</publishTf>
-        <publishWheelJointState>true</publishWheelJointState>
-        <legacyMode>false</legacyMode>
-        <updateRate>20</updateRate>
-        <rosDebugLevel>na</rosDebugLevel>
-        </plugin>
-    </gazebo> 
 
      <!-- hokuyo -->
     <gazebo reference="base_scan">
