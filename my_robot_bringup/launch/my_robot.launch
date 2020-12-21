@@ -4,5 +4,5 @@
 		<param name="port" value="/dev/ttyACM0"/>
 		<param name="baud" value="115200"/>
 	</node>
-	<include file="$(find rplidar_ros)/launch/rplidar.launch"/>
+	<include file="$(find my_robot_bringup)/launch/my_robot_lidar.launch"/>
 </launch>

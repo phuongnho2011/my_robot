@@ -5,10 +5,10 @@
   <arg name="set_map_frame"  default="map"/>
 
   <!-- Gmapping -->
-  <node pkg="gmapping" type="slam_gmapping" name="turtlebot3_slam_gmapping" output="screen">
+  <node pkg="gmapping" type="slam_gmapping" name="my_robot_slam_gmapping" output="screen">
     <param name="base_frame" value="$(arg set_base_frame)"/>
     <param name="odom_frame" value="$(arg set_odom_frame)"/>
     <param name="map_frame"  value="$(arg set_map_frame)"/>
-    <rosparam command="load" file="$(find turtlebot3_slam)/config/gmapping_params.yaml" />
+    <rosparam command="load" file="$(find my_robot_slam)/config/gmapping_params.yaml" />
   </node>
 </launch>
