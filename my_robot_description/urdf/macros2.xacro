@@ -10,13 +10,13 @@
             <collision name="${name}_wheel_collision">
               <origin rpy="0 1.5707 1.5707" xyz="0 0 0"/>
               <geometry>
-                <cylinder length="0.05" radius="0.022"/>
+                <cylinder length="0.05" radius="0.0275"/>
               </geometry>
             </collision>
             <visual name="${name}_visual">
               <origin rpy="0 1.5707 1.5707" xyz="0 0 0"/>
               <geometry>
-                <cylinder length="0.05" radius="0.022"/>
+                <cylinder length="0.05" radius="0.0275"/>
               </geometry>
             </visual>
         </link>
